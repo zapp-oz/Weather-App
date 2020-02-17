@@ -11,7 +11,7 @@ const forecast = (lat, long, callback) => {
         } else if(body.error){
             callback("Forecast not available", undefined);
         } else{
-            callback(undefined, body.hourly.summary + " It is currently " + body.currently.temperature + " degrees out. There is a " + body.currently.precipProbability + "% chance of rain.");
+            callback(undefined, body.hourly.summary + "Today's high and low are " + body.daily.data[0].temperatureHigh + " and " + body.daily.data[1].temperatureLow + " respectively. It is currently " + body.currently.temperature + " degrees out. There is a " + body.currently.precipProbability + "% chance of rain.");
         }
     })
 }
